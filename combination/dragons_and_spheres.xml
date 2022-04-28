@@ -1,0 +1,22 @@
+<RT3>
+    <lookat look_from="25 5 0" look_at="0 1.5 0" up="0 1 0" />
+    <camera type="perspective" fovy="35" /> <!--  screen_window="-5.3 5.3 -4 4" /> -->
+    <accelerator type="bvh" split_method="middle" max_prims_per_node="4" />
+    <integrator type="blinn_phong" depth="2" />
+    <sampler type="stratified" x_samples="4" y_samples="4" dimensions="1" jitter="on" />
+    <filter type="gaussian" alpha="2" x_width="2" y_width="2" />
+    <!-- <filter type="box" x_width="0.5" y_width="0.5" /> -->
+    <!-- <film type="image" x_res="2800" y_res="1800" cropwindow="0.6 0.8 0.2 0.6" -->
+    <film type="image" x_res="800" y_res="600"
+        filename="dragons_and_spheres_persp.png" img_type="png" gamma_corrected="yes" />
+
+    <include filename="../combination/geometry.xml" />
+
+    <lookat look_from="3 7 0" look_at="-3 0 0" up="-1 0 0" />
+    <camera type="orthographic" screen_window="-20 20 -12.8 12.8"/>
+    <film type="image" x_res="1400" y_res="900" crop_window="0 1 0 1"
+        filename="dragons_and_spheres_ortho.png" img_type="png" gamma_corrected="yes" />
+
+    <render_again/>
+
+</RT3>
